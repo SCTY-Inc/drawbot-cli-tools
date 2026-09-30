@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y libegl1 libgl1 libfontconfig1
       - uses: astral-sh/setup-uv@v5
       - run: uv sync --extra dev --frozen
       - run: uv run pytest -q
