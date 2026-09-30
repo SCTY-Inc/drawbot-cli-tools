@@ -1,6 +1,24 @@
-# drawbot
+# drawbot-cli-tools
 
-A radically minimal, headless DrawBot CLI built on bundled upstream `drawbot-skia` source.
+Branded vector artifacts from DrawBot, with typographic rules enforced rather than suggested. A headless, Skia-native DrawBot CLI built on bundled upstream `drawbot-skia` source.
+
+## Install and run
+
+Requires [uv](https://docs.astral.sh/uv/) and Python 3.11+.
+
+```bash
+git clone https://github.com/SCTY-Inc/drawbot-cli-tools && cd drawbot-cli-tools
+uv sync --extra dev
+uv run drawbot doctor     # expect status=ok
+uv run pytest -q          # 24 tests
+uv run drawbot create social-quote --design DESIGN.md \
+  --recipe fixtures/brand_artifacts/social-quote.recipe.yaml \
+  --data fixtures/brand_artifacts/social-quote.content.yaml -o out/social-quote
+```
+
+## License
+
+SCTY code: MIT, copyright 2026 SCTY, Inc (see `LICENSE`). `vendor/` bundles [drawbot-skia](https://github.com/justvanrossum/drawbot-skia) by Just van Rossum under the Apache License 2.0 (see `vendor/LICENSE.txt`). This project is not a copy of [DrawBot](https://github.com/typemytype/drawbot) (BSD, Just van Rossum, Erik van Blokland, Frederik Berlaen), which is a separate upstream project.
 
 ## High-level branded artifact workflow
 
