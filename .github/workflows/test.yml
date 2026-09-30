@@ -12,3 +12,5 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - run: uv sync --extra dev --frozen
       - run: uv run pytest -q
+        env:
+          _TYPER_FORCE_DISABLE_TERMINAL: "1"
