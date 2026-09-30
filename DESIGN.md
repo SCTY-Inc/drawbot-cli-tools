@@ -103,5 +103,3 @@ The resulting `out/social-quote/manifest.json` should summarize:
 - `summary.total: 4`
 - `summary.rendered: 4` when all variants pass lint
 - per-variant `layout`, `spec`, `output`, `rendered`, `warnings`, and machine-readable `lint`
-
-The repo fixture walkthrough in `fixtures/brand_artifacts/WORKFLOW.md` documents the same path end to end.
